@@ -58,7 +58,7 @@
         select="index-of($subheadings, 'LOC'), index-of($subheadings, 'DNB')"/>
     <xsl:variable name="note" as="xs:integer" select="index-of($headings, 'note abstract')"/>
 
-    <xsl:template match="/">
+    <xsl:template match="/" name="xsl:initial-template">
         <!-- data begin at row 4; set upper limit for testing  with something like $tsv[position() ge 4 and position() l3 12]-->
         <xsl:for-each select="$tsv[position() ge 4]">
             <xsl:variable name="values" as="xs:string+" select="tokenize(current(), '\t')"/>
